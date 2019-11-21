@@ -1,0 +1,128 @@
+<template id="btn-table-opc">
+    <div class="btn-group" role="group">
+        <button class="btn btn-xs btn-outline-primary ver" id="%id%" type="button">
+            Ver Perfil
+        </button>
+    </div>
+</template>
+<template id="v-nuevo-usuario">
+    <h5 class="mg-b-10" id="section4">
+        Nuevo Usuario:
+        <hr/>
+    </h5>
+    <form id="nuevousuario_mx">
+        <div class="alert alert-solid d-none" id="response" role="alert">
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label>
+                    Usuario
+                </label>
+                <input autofocus="true" class="form-control" id="user" name="user" placeholder="Usuario" type="text">
+                </input>
+            </div>
+            <div class="form-group col-md-6">
+                <label>
+                    Correo Electrónico
+                </label>
+                <input class="form-control" id="email" name="email" placeholder="Correo Electrónico" type="email">
+                </input>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label>
+                    Contraseña
+                </label>
+                <input class="form-control" id="pass" name="pass" placeholder="Contraseña" type="password">
+                </input>
+            </div>
+            <div class="form-group col-md-6">
+                <label>
+                    Confirmar Contraseña
+                </label>
+                <input class="form-control" id="pass2" name="pass2" placeholder="Confirmar Contraseña" type="password">
+                </input>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-3">
+                <label>
+                    Rol de Usuario:
+                </label>
+                <select class="custom-select" id="rol" name="rol">
+                    <option selected="" value="">
+                        Seleccione...
+                    </option>
+                    <option value="1">
+                        Administrador
+                    </option>
+                    <option value="2">
+                        Gestionador
+                    </option>
+                    <option value="3">
+                        Monitoreo
+                    </option>
+                    <option value="4">
+                        Cliente
+                    </option>
+                </select>
+            </div>
+            <div class="form-group col-md-9">
+                <label>
+                    Módulos:
+                </label>
+                <div class="d-flex" id="modulos">
+                </div>
+            </div>
+        </div>
+        <button class="btn btn-primary" id="btn-nuevo-usuario">
+            Crear Usuario
+        </button>
+    </form>
+</template>
+<template id="v-modulos">
+    <div class="%class%">
+        <div class="custom-control custom-checkbox">
+            <input class="custom-control-input" id="%val%" name="modulos_%val%" type="checkbox">
+                <label class="custom-control-label" for="%val%">
+                    %val%
+                </label>
+            </input>
+        </div>
+    </div>
+</template>
+<template id="v-table">
+    <h5 class="card-title">
+        Usuarios
+    </h5>
+    <h6 class="card-subtitle mb-2 text-muted">
+        Aquí puede ver todos sus usuarios de convenio.
+    </h6>
+    <br/>
+    <table class="table table-sm table-hover" id="table">
+    </table>
+</template>
+<template id="v-usuario">
+    <div class="col-sm mg-t-10 mg-sm-t-0">
+        <div class="card">
+            <div class="card-body">
+                <p class="card-text">
+                    Usuario: %user%
+                </p>
+                <p class="card-text">
+                    Email: %email%
+                </p>
+            </div>
+            <div class="card-footer">
+                <a class="editar" href="#" id="%id%">
+                    Editar
+                </a>
+                <a class="mg-l-10 eliminar" href="#" id="%id%">
+                    Eliminar
+                </a>
+            </div>
+        </div>
+    </div>
+</template>
+<br/>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <!-- Required meta tags -->
+        <base href="{{config.build.url}}"/>
+        <meta charset="utf-8"/>
+        <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+        <!-- Meta -->
+        <meta content="{{config.build.name}}" name="description"/>
+        <meta content="@martinxapps" name="author"/>
+        <!-- Favicon -->
+        <link href="assets/dashforge/assets/img/favicon.png" rel="shortcut icon" type="image/x-icon"/>
+        <title>
+            Dashboard | {{config.build.name}}
+        </title>
+        <!-- vendor css -->
+        <link href="assets/dashforge/lib/ionicons/css/ionicons.min.css" rel="stylesheet"/>
+        <link href="assets/dashforge/lib/prismjs/themes/prism-vs.css" rel="stylesheet"/>
+        <link href="assets/dashforge/lib/datatables.net-dt/css/jquery.dataTables.min.css" rel="stylesheet"/>
+        <link href="assets/dashforge/lib/datatables.net-responsive-dt/css/responsive.dataTables.min.css" rel="stylesheet"/>
+        <link href="assets/dashforge/lib/select2/css/select2.min.css" rel="stylesheet"/>
+        <!-- DashForge CSS -->
+        <link href="assets/dashforge/assets/css/dashforge.css" rel="stylesheet"/>
+        <link href="assets/dashforge/assets/css/dashforge.demo.css" rel="stylesheet"/>
+    </head>
+</html>
+<body class="page-profile">
+    <header class="navbar navbar-header navbar-header-fixed">
+        <a class="burger-menu" href="#" id="mainMenuOpen">
+            <i data-feather="menu">
+            </i>
+        </a>
+        <div class="navbar-brand">
+            <a class="df-logo" href="{{config.build.url}}">
+                Metrolab |
+                <span style="margin-left: 0.4rem">
+                    Convenios
+                </span>
+            </a>
+        </div>
+        <!-- navbar-brand -->
+        <div class="navbar-menu-wrapper" id="navbarMenu">
+            <div class="navbar-menu-header">
+                <a class="df-logo" href="{{config.build.url}}">
+                    Metrolab |
+                    <span style="margin-left: 0.4rem">
+                        Convenios
+                    </span>
+                </a>
+                <a href="#" id="mainMenuClose">
+                    <i data-feather="x">
+                    </i>
+                </a>
+            </div>
+            <!-- navbar-menu-header -->
+            {{menu_user|raw}}
+        </div>
+        <!-- navbar-right -->
+        {% include 'menu/menu' %}
+        <!-- navbar-right -->
+    </header>
+    <!-- navbar -->
+    <div class="content content-fixed">
+        <div class="container pd-x-0 pd-lg-x-10 pd-xl-x-0" id="app">
+            <div class="row row-xs">
+                <div class="container pd-x-0 pd-lg-x-10 pd-xl-x-0" id="app">
+                    <div class="d-sm-flex align-items-center justify-content-between mg-b-20 mg-lg-b-25 mg-xl-b-30">
+                        <div>
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb breadcrumb-style1 mg-b-10">
+                                    <li class="breadcrumb-item">
+                                        <a href="#">
+                                            Laboratorio
+                                        </a>
+                                    </li>
+                                    <li aria-current="page" class="breadcrumb-item active">
+                                        Resultados de Laboratorio
+                                    </li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                    <div class="row row-xs">
+                        <p class="mg-b-30">
+                            You can set a line height instantly to an element by using the following utilities classes.
+                        </p>
+                        <div class="col-lg-12 col-xl-12" id="content">
+                        </div>
+                    </div>
+                    <!-- row -->
+                </div>
+            </div>
+            <!-- row -->
+        </div>
+        <!-- container -->
+    </div>
+    <!-- content -->
+    {% include 'overall/footer' %}
+    {% include 'laboratorio/' ~ owner_user.name_rol ~ '/extends' %}
+    <script src="assets/dashforge/lib/jquery/jquery.min.js">
+    </script>
+    <script src="assets/dashforge/lib/bootstrap/js/bootstrap.bundle.min.js">
+    </script>
+    <script src="assets/dashforge/lib/feather-icons/feather.min.js">
+    </script>
+    <script src="assets/dashforge/lib/perfect-scrollbar/perfect-scrollbar.min.js">
+    </script>
+    <script src="assets/dashforge/lib/prismjs/prism.js">
+    </script>
+    <script src="assets/dashforge/lib/datatables.net/js/jquery.dataTables.min.js">
+    </script>
+    <script src="assets/dashforge/lib/datatables.net-dt/js/dataTables.dataTables.min.js">
+    </script>
+    <script src="assets/dashforge/lib/datatables.net-responsive/js/dataTables.responsive.min.js">
+    </script>
+    <script src="assets/dashforge/lib/datatables.net-responsive-dt/js/responsive.dataTables.min.js">
+    </script>
+    <script src="assets/dashforge/lib/liveajax/liveajax.js">
+    </script>
+    <script src="assets/dashforge/lib/select2/js/select2.min.js">
+    </script>
+    <script src="assets/dashforge/assets/js/dashforge.js">
+    </script>
+    <script src="assets/dashforge/lib/navigo/navigo.min.js?{{ date().timestamp }}">
+    </script>
+    <script src="assets/dashforge/lib/navigo/navigo.js?{{ date().timestamp }}">
+    </script>
+    <script type="text/javascript">
+        var urlhome = '{{config.build.url}}';
+    </script>
+    <script src="assets/dashforge/app/js/laboratorio/{{owner_user.name_rol|lower}}.laboratorio.js?{{ date().timestamp }}">
+    </script>
+    <script src="//mozilla.github.io/pdf.js/build/pdf.js">
+    </script>
+</body>

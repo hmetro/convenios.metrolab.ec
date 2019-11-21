@@ -1,0 +1,199 @@
+<template id="btn-table-opc">
+    <div class="btn-group" role="group">
+        <button class="btn btn-xs btn-outline-primary ver-resultado" id="%id%" type="button">
+            <i class="icon ion-md-document">
+            </i>
+            Ver
+        </button>
+        <button class="btn btn-xs btn-outline-primary descargar-resultado" id="%id%" type="button">
+            <i class="icon ion-md-download">
+            </i>
+            Descargar
+        </button>
+        <button class="btn btn-xs btn-outline-primary enviar-resultado" id="%id%" title="Enviar por Correo Electrónico" type="button">
+            <i class="icon ion-md-mail">
+            </i>
+            Enviar
+        </button>
+    </div>
+</template>
+<template id="check-opc">
+    <input class="check-descargar-resultado" id="%id%" name="case" type="checkbox" value="%id%"/>
+</template>
+<template id="v-ver-resultado">
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">
+                RESULTADO DE LABORATORIO:
+            </h5>
+            <h6 class="card-subtitle mb-2 text-muted">
+                <b>
+                    PACIENTE:
+                </b>
+                %paciente%
+            </h6>
+            <h6 class="card-subtitle mb-2 text-muted">
+                <b>
+                    ORIGEN:
+                </b>
+                %origen%
+            </h6>
+            <h6 class="card-subtitle mb-2 text-muted">
+                <b>
+                    FECHA:
+                </b>
+                %fecha%
+            </h6>
+            <h6 class="card-subtitle mb-2 text-muted">
+                <b>
+                    CONVENIO:
+                </b>
+                %convenio%
+            </h6>
+            <div class="divider-text">
+                <a class="card-link mg-r-20 tx-12" href="#" id="prev">
+                    <i class="icon ion-md-return-left">
+                    </i>
+                    Anterior
+                </a>
+                <span class="tx-12">
+                    Página:
+                    <span id="page_num">
+                    </span>
+                    /
+                    <span id="page_count">
+                    </span>
+                </span>
+                <a class="card-link mg-l-20 tx-12" href="#" id="next">
+                    Siguiente
+                    <i class="icon ion-md-return-right">
+                    </i>
+                </a>
+                <a class="card-link mg-l-80 tx-12" download="Res_Lab_%id_resultado%_%fecha%_.pdf" href="%pdf%">
+                    <i class="icon ion-md-download">
+                    </i>
+                    Descargar
+                </a>
+                <a class="card-link mg-l-120 tx-12" download="Res_Lab_%id_resultado%_%fecha%_.pdf" href="%pdf%" title="Enviar por Correo Electrónico">
+                    <i class="icon ion-md-mail">
+                    </i>
+                    Enviar
+                </a>
+            </div>
+            <div class="d-flex justify-content-center">
+                <canvas id="the-canvas" width="100%">
+                </canvas>
+            </div>
+        </div>
+    </div>
+</template>
+<template id="v-table">
+    <h5 class="card-title">
+        Resultados de Laboratorio
+    </h5>
+    <h6 class="card-subtitle mb-2 text-muted">
+        Aqui puede obtener todos los resultados disponibles.
+    </h6>
+    <br/>
+    <div class="df-example demo-table mg-b-20" data-label="Filtrar">
+        <div class="row">
+            <div class="col-sm-6">
+                <input autofocus="" class="form-control mg-b-20" id="_dt_search_text" placeholder="Buscar..." title="Buscar" type="text"/>
+            </div>
+            <div class="col-sm-6">
+                <div class="input-group">
+                    <input class="form-control" id="desde" placeholder="Desde" title="Desde" type="text">
+                    </input>
+                    <input class="form-control" id="hasta" placeholder="Hasta" title="Hasta" type="text">
+                        <div class="input-group-append">
+                            <a class="btn btn-outline-light" href="#" id="downall" title="Descargar Todos">
+                                Descargar Todos
+                            </a>
+                            <button class="btn btn-outline-light" id="filtrar" title="Buscar" type="button">
+                                <i class="icon ion-md-funnel">
+                                </i>
+                                Filtrar
+                            </button>
+                            <button class="btn btn-outline-light" id="borrar" title="Borrar" type="button">
+                                <i class="icon ion-md-close">
+                                </i>
+                            </button>
+                        </div>
+                    </input>
+                </div>
+            </div>
+        </div>
+    </div>
+    <table class="table table-sm table-hover" id="table">
+    </table>
+</template>
+<template id="v-spinner">
+    <div class="card">
+        <div class="card-body" style="height: 1000px;">
+            <div class="progress ht-20 mg-t-20">
+                <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="0" class="progress-bar progress-bar-animated wd-25p" id="loader" role="progressbar">
+                    0%
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+<template id="v-enviar-resultado">
+    <fieldset class="form-fieldset">
+        <legend>
+            Enviar Resultado
+        </legend>
+        <form id="enviarresultado_mx">
+            <div class="form-group row">
+                <div class="col-sm-10 offset-sm-2">
+                    <div class="alert alert-solid d-none" id="response" role="alert">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label" for="email">
+                    Correo Electrónico:
+                </label>
+                <div class="col-sm-10">
+                    <input autofocus="" class="form-control" id="email" name="email" placeholder="Correo Electrónico" type="email">
+                    </input>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label" for="email">
+                    Resultado de Laboratorio
+                </label>
+                <div>
+                    <div class="col-6 col-sm-4 col-md-3 col-xl">
+                        <div class="card card-file">
+                            <div class="card-file-thumb tx-danger d-flex align-items-center justify-content-center mg-t-20">
+                                <i class="icon ion-md-document" style="font-size: -webkit-xxx-large;">
+                                </i>
+                            </div>
+                            <div class="card-body">
+                                <h6>
+                                    <a class="link-02" href="%pdf%" target="_blank">
+                                        Resultado de Laboratorio
+                                    </a>
+                                </h6>
+                            </div>
+                            <div class="card-footer">
+                                <a class="tx-medium" href="%pdf%" target="_blank">
+                                    Ver Resultado
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group row mg-b-0">
+                <div class="col-sm-12 d-flex flex-row-reverse">
+                    <button class="btn btn-primary" id="btn-enviar">
+                        Enviar Resultado
+                    </button>
+                </div>
+            </div>
+        </form>
+    </fieldset>
+</template>
+<br/>

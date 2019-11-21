@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <!-- Required meta tags -->
+        <base href="{{config.build.url}}"/>
+        <meta charset="utf-8"/>
+        <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+        <!-- Meta -->
+        <meta content="{{config.build.name}}" name="description"/>
+        <meta content="@martinxapps" name="author"/>
+        <!-- Favicon -->
+        <link href="assets/dashforge/assets/img/favicon.png" rel="shortcut icon" type="image/x-icon"/>
+        <title>
+            Perfil | {{config.build.name}}
+        </title>
+        <!-- vendor css -->
+        <link href="assets/dashforge/lib/ionicons/css/ionicons.min.css" rel="stylesheet"/>
+        <!-- DashForge CSS -->
+        <link href="assets/dashforge/assets/css/dashforge.css" rel="stylesheet"/>
+        <link href="assets/dashforge/assets/css/dashforge.profile.css" rel="stylesheet"/>
+    </head>
+</html>
+<body class="page-profile">
+    <header class="navbar navbar-header navbar-header-fixed">
+        <a class="burger-menu" href="#" id="mainMenuOpen">
+            <i data-feather="menu">
+            </i>
+        </a>
+        <div class="navbar-brand">
+            <a class="df-logo" href="{{config.build.url}}">
+                Metrolab |
+                <span style="margin-left: 0.4rem">
+                    Convenios
+                </span>
+            </a>
+        </div>
+        <!-- navbar-brand -->
+        <div class="navbar-menu-wrapper" id="navbarMenu">
+            <div class="navbar-menu-header">
+                <a class="df-logo" href="{{config.build.url}}">
+                    Metrolab |
+                    <span style="margin-left: 0.4rem">
+                        Convenios
+                    </span>
+                </a>
+                <a href="#" id="mainMenuClose">
+                    <i data-feather="x">
+                    </i>
+                </a>
+            </div>
+            <!-- navbar-menu-header -->
+            {{menu_user|raw}}
+        </div>
+        <!-- navbar-right -->
+        {% include 'menu/menu' %}
+        <!-- navbar-right -->
+    </header>
+    <!-- navbar -->
+    <div class="content content-fixed content-profile">
+        <div class="container pd-x-0 pd-lg-x-10 pd-xl-x-0">
+            <div class="media d-block d-lg-flex">
+                <div class="profile-sidebar pd-lg-r-25">
+                    <div class="row">
+                        <div class="col-sm-3 col-md-2 col-lg">
+                            <div class="avatar avatar-xxl avatar-online">
+                                <span class="avatar-initial rounded-circle">
+                                    <i data-feather="user">
+                                    </i>
+                                </span>
+                            </div>
+                        </div>
+                        <!-- col -->
+                        <div class="col-sm-8 col-md-7 col-lg mg-t-20 mg-sm-t-0 mg-lg-t-25">
+                            <h5 class="mg-b-2 tx-spacing--1" id="dt-user">
+                            </h5>
+                            <p class="tx-color-03 mg-b-25" id="dt-rol">
+                            </p>
+                        </div>
+                        <!-- col -->
+                        <div class="col-sm-6 col-md-5 col-lg mg-t-40">
+                            <label class="tx-sans tx-10 tx-semibold tx-uppercase tx-color-01 tx-spacing-1 mg-b-15">
+                                Mis Datos
+                            </label>
+                            <ul class="list-unstyled profile-info-list">
+                                <li>
+                                    <i data-feather="user">
+                                    </i>
+                                    <span class="tx-color-03" id="dt-n-a">
+                                    </span>
+                                </li>
+                                <li>
+                                    <i data-feather="mail">
+                                    </i>
+                                    <a href="#" id="dt-email">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="tx-medium" id="dt-dp">
+                                        Datos Personales
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="tx-medium " href="#" id="dt-cv">
+                                        Datos de Convenio
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="tx-medium " id="dt-rp">
+                                        Cambiar Contraseña
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- col -->
+                    </div>
+                    <!-- row -->
+                </div>
+                <!-- profile-sidebar -->
+                <div class="media-body mg-t-40 mg-lg-t-0 pd-lg-x-10" id="content">
+                </div>
+                <!-- media-body -->
+            </div>
+            <!-- media -->
+        </div>
+        <!-- container -->
+    </div>
+    <!-- content -->
+    {% include 'overall/footer' %}
+    <script type="text/javascript">
+        {% set user = owner_user.name_rol %}
+        {% set temp = ocrend_encode('assets/templates/perfil.' ~ owner_user.name_rol|lower ~ '.extends.mx', 'temp')  %}
+        var urlhome = '{{config.build.url}}';
+        var mx = '{{temp}}';
+        var perfil_id = '{{owner_user.id}}';
+    </script>
+    <script defer="" src="assets/dashforge/lib/jquery/jquery.min.js">
+    </script>
+    <script defer="" src="assets/dashforge/lib/bootstrap/js/bootstrap.bundle.min.js">
+    </script>
+    <script defer="" src="assets/dashforge/lib/feather-icons/feather.min.js">
+    </script>
+    <script defer="" src="assets/dashforge/lib/perfect-scrollbar/perfect-scrollbar.min.js">
+    </script>
+    <script defer="" src="assets/dashforge/assets/js/dashforge.js">
+    </script>
+    <script defer="" src="assets/dashforge/lib/navigo/navigo.min.js?{{ date().timestamp }}">
+    </script>
+    <script defer="" src="assets/dashforge/lib/navigo/navigo.js?{{ date().timestamp }}">
+    </script>
+    <script defer="" src="assets/dashforge/app/js/perfil/{{owner_user.name_rol|lower}}.perfil.js?{{ date().timestamp }}">
+    </script>
+</body>

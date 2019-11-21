@@ -1,0 +1,38 @@
+<div class="navbar-right">
+    <div class="dropdown dropdown-profile">
+        <a class="dropdown-link nav-link" data-display="static" data-toggle="dropdown" href="#">
+            <div class="avatar avatar-sm">
+                <i data-feather="user">
+                </i>
+            </div>
+        </a>
+        <!-- dropdown-link -->
+        <div class="dropdown-menu dropdown-menu-right tx-13">
+            <h6 class="tx-semibold mg-b-5">
+                {{owner_user.user}}
+            </h6>
+            <p class="mg-b-25 tx-12 tx-color-03">
+                {{owner_user.name_rol}}
+            </p>
+            <a class="dropdown-item" href="{{config.build.url}}perfil#!/{{owner_user.id}}">
+                <i data-feather="user">
+                </i>
+                Ver Perfil
+            </a>
+            <div class="dropdown-divider">
+            </div>
+            <a class="dropdown-item" href="{{config.build.url}}centro-de-soporte">
+                <i data-feather="help-circle">
+                </i>
+                Centro de Soporte
+            </a>
+            <a class="dropdown-item" href="{{config.build.url}}salir">
+                <i data-feather="log-out">
+                </i>
+                Salir
+            </a>
+        </div>
+        <!-- dropdown-menu -->
+    </div>
+    <!-- dropdown -->
+</div>

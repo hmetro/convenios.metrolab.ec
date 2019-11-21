@@ -1,0 +1,490 @@
+<template id="v-perfil">
+    <div class="card card-profile-interest">
+        <div class="card-header pd-y-15 pd-x-20 d-flex align-items-center justify-content-between">
+            <h6 class="tx-uppercase tx-semibold mg-b-0">
+                Mi Perfil
+            </h6>
+        </div>
+        <!-- card-header -->
+        <div class="card-body pd-25">
+            <div class="row">
+                <div class="col-sm col-lg-12 col-xl">
+                    <div class="media">
+                        <div class="wd-45 ht-45 bg-primary rounded d-flex align-items-center justify-content-center">
+                            <i class="icon ion-md-person tx-white-7">
+                            </i>
+                        </div>
+                        <div class="media-body pd-l-25">
+                            <h6 class="tx-color-01 mg-b-5">
+                                Datos Personales
+                            </h6>
+                            <p class="tx-12 mg-b-10">
+                                Actualiza tu infromación personal.
+                                <a href="perfil#!/%perfil_id%/datos-personales">
+                                    Ver Más
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                    <!-- media -->
+                    <div class="media">
+                        <div class="wd-45 ht-45 bg-primary rounded d-flex align-items-center justify-content-center">
+                            <i class="icon ion-md-calendar tx-white-7">
+                            </i>
+                        </div>
+                        <div class="media-body pd-l-25">
+                            <h6 class="tx-color-01 mg-b-5">
+                                Timeline
+                            </h6>
+                            <p class="tx-12 mg-b-10">
+                                Historial de Actividad
+                                <a href="perfil#!/%perfil_id%/timeline">
+                                    Ver Más
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                    <!-- media -->
+                </div>
+                <!-- col -->
+                <div class="col-sm col-lg-12 col-xl mg-t-25 mg-sm-t-0 mg-lg-t-25 mg-xl-t-0">
+                    <div class="media">
+                        <div class="wd-45 ht-45 bg-primary rounded d-flex align-items-center justify-content-center">
+                            <i class="icon ion-md-key tx-white-7">
+                            </i>
+                        </div>
+                        <div class="media-body pd-l-25">
+                            <h6 class="tx-color-01 mg-b-5">
+                                Datos de Convenio
+                            </h6>
+                            <p class="tx-12 mg-b-10">
+                                Actualiza toda la infromación de Convenio
+                                <a href="perfil#!/%perfil_convenio%/convenio">
+                                    Ver Más
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                    <!-- media -->
+                </div>
+                <!-- col -->
+            </div>
+            <!-- row -->
+        </div>
+        <!-- card-body -->
+    </div>
+    <!-- card -->
+</template>
+<template id="v-datos-personales">
+    <div class="card card-profile-interest">
+        <div class="card-header pd-y-15 pd-x-20 d-flex align-items-center justify-content-between">
+            <h6 class="tx-uppercase tx-semibold mg-b-0">
+                Datos Personales
+            </h6>
+        </div>
+        <!-- card-header -->
+        <div class="card-body pd-25">
+            <div class="row">
+                <div class="col-sm-12 col-lg-12 col-xl-12">
+                    <form>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="inputEmail4">
+                                    Correo Electrónico
+                                </label>
+                                <input class="form-control" disabled="" id="email" placeholder="Correo Electrónico" type="email" value="%email%">
+                                </input>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="inputPassword4">
+                                    Usuario
+                                </label>
+                                <input class="form-control" disabled="" id="user" placeholder="Usuario" type="text" value="%user%">
+                                </input>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="inputEmail4">
+                                    Nombres
+                                </label>
+                                <input class="form-control" disabled="" id="nombres" placeholder="Nombres" type="text" value="%nombres%">
+                                </input>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="inputEmail4">
+                                    Apellidos
+                                </label>
+                                <input class="form-control" disabled="" id="apellidos" placeholder="Apellidos" type="text" value="%apellidos%">
+                                </input>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary editar" id="%id%">
+                            Editar
+                        </button>
+                        <button class="btn btn-primary cambiar-contraseña" id="%id%">
+                            Cambiar Contraseña
+                        </button>
+                        <button class="btn btn-danger eliminar" id="%id%">
+                            Eliminar
+                        </button>
+                    </form>
+                </div>
+                <!-- col -->
+            </div>
+            <!-- row -->
+        </div>
+        <!-- card-body -->
+    </div>
+</template>
+<template id="v-convenio">
+    <div class="card card-profile-interest">
+        <div class="card-header pd-y-15 pd-x-20 d-flex align-items-center justify-content-between">
+            <h6 class="tx-uppercase tx-semibold mg-b-0">
+                Datos de Convenio
+            </h6>
+        </div>
+        <!-- card-header -->
+        <div class="card-body pd-25">
+            <div class="row">
+                <div class="col-sm-12 col-lg-12 col-xl-12">
+                    <form>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="inputEmail4">
+                                    Isologo
+                                </label>
+                                <br/>
+                                <img class="img-thumbnail rounded " id="temp_isologo" src="%isologo%">
+                                </img>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputAddress2">
+                                Dirección
+                            </label>
+                            <input class="form-control" disabled="" id="dir" name="dir" type="text" value="%dir%">
+                            </input>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputAddress2">
+                                Telefonos:
+                            </label>
+                            <input class="form-control" disabled="" id="tel" name="tel" type="text" value="%tel%">
+                            </input>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputAddress2">
+                                Correo electrónco:
+                            </label>
+                            <input class="form-control" disabled="" id="email" name="email" type="email" value="%email%">
+                            </input>
+                        </div>
+                        <button class="btn btn-primary editar" id="%perfil_convenio%">
+                            Editar Convenio
+                        </button>
+                    </form>
+                </div>
+                <!-- col -->
+            </div>
+            <!-- row -->
+        </div>
+        <!-- card-body -->
+    </div>
+</template>
+<template id="v-timeline">
+    <div class="card card-profile-interest">
+        <div class="card-header pd-y-15 pd-x-20 d-flex align-items-center justify-content-between">
+            <h6 class="tx-uppercase tx-semibold mg-b-0">
+                Mi Timeline
+            </h6>
+        </div>
+        <!-- card-header -->
+        <div class="card-body pd-25">
+            <div class="row">
+                <div class="col-sm-12 col-lg-12 col-xl-12">
+                    <form>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="inputEmail4">
+                                    Email
+                                </label>
+                                <input class="form-control" id="inputEmail4" placeholder="Email" type="email">
+                                </input>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="inputPassword4">
+                                    Password
+                                </label>
+                                <input class="form-control" id="inputPassword4" placeholder="Password" type="password">
+                                </input>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputAddress">
+                                Address
+                            </label>
+                            <input class="form-control" id="inputAddress" placeholder="1234 Main St" type="text">
+                            </input>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputAddress2">
+                                Address 2
+                            </label>
+                            <input class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor" type="text">
+                            </input>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-5">
+                                <label>
+                                    Birthday
+                                </label>
+                                <select class="custom-select">
+                                    ...
+                                </select>
+                            </div>
+                            <div class="form-group col-md-3 d-flex align-items-end">
+                                <select class="custom-select">
+                                    ...
+                                </select>
+                            </div>
+                            <div class="form-group col-md-4 d-flex align-items-end">
+                                <select class="custom-select">
+                                    ...
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="custom-control custom-checkbox">
+                                <input class="custom-control-input" id="customCheck1" type="checkbox">
+                                    <label class="custom-control-label" for="customCheck1">
+                                        Agree with Terms of Use and Privacy Policy
+                                    </label>
+                                </input>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary" type="submit">
+                            Submit Form
+                        </button>
+                    </form>
+                </div>
+                <!-- col -->
+            </div>
+            <!-- row -->
+        </div>
+        <!-- card-body -->
+    </div>
+</template>
+<template id="v-editar-datos">
+    <div class="card card-profile-interest">
+        <div class="card-header pd-y-15 pd-x-20 d-flex align-items-center justify-content-between">
+            <h6 class="tx-uppercase tx-semibold mg-b-0">
+                Datos Personales
+            </h6>
+        </div>
+        <!-- card-header -->
+        <div class="card-body pd-25">
+            <div class="row">
+                <div class="col-sm-12 col-lg-12 col-xl-12">
+                    <form id="datauser_mx">
+                        <div class="alert alert-solid d-none" id="response" role="alert">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="inputEmail4">
+                                    Correo Electrónico
+                                </label>
+                                <input autofocus="" class="form-control" id="email" name="email" placeholder="Correo Electrónico" type="email" value="%email%">
+                                </input>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="inputPassword4">
+                                    Usuario
+                                </label>
+                                <input class="form-control" id="user" name="user" placeholder="Usuario" type="text" value="%user%">
+                                </input>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="inputEmail4">
+                                    Nombres
+                                </label>
+                                <input class="form-control" id="nombres" name="nombres" placeholder="Nombres" type="text" value="%nombres%">
+                                </input>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="inputEmail4">
+                                    Apellidos
+                                </label>
+                                <input class="form-control" id="apellidos" name="apellidos" placeholder="Apellidos" type="text" value="%apellidos%">
+                                </input>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary" id="btn-editar">
+                            Editar
+                        </button>
+                    </form>
+                </div>
+                <!-- col -->
+            </div>
+            <!-- row -->
+        </div>
+        <!-- card-body -->
+    </div>
+</template>
+<template id="v-editar-contraseña">
+    <div class="card card-profile-interest">
+        <div class="card-header pd-y-15 pd-x-20 d-flex align-items-center justify-content-between">
+            <h6 class="tx-uppercase tx-semibold mg-b-0">
+                Datos Personales
+            </h6>
+        </div>
+        <!-- card-header -->
+        <div class="card-body pd-25">
+            <div class="row">
+                <div class="col-sm-12 col-lg-12 col-xl-12">
+                    <form id="pass_mx">
+                        <div class="alert alert-solid d-none" id="response" role="alert">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-12">
+                                <label for="inputEmail4">
+                                    Contraseña Actual
+                                </label>
+                                <input autofocus="" class="form-control" id="pass" name="pass" placeholder="Correo Electrónico" type="password">
+                                </input>
+                            </div>
+                            <div class="form-group col-md-12">
+                                <label for="inputPassword4">
+                                    Nueva Contraseña
+                                </label>
+                                <input class="form-control" id="pass2" name="pass2" placeholder="Nueva Contraseña" type="password">
+                                </input>
+                            </div>
+                            <div class="form-group col-md-12">
+                                <label for="inputPassword4">
+                                    Confirmar Contraseña
+                                </label>
+                                <input class="form-control" id="pass3" name="pass3" placeholder="Confirmar Contraseña" type="password">
+                                </input>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary" id="btn-editar">
+                            Cambiar Contraseña
+                        </button>
+                    </form>
+                </div>
+                <!-- col -->
+            </div>
+            <!-- row -->
+        </div>
+        <!-- card-body -->
+    </div>
+</template>
+<template id="v-editar-convenio">
+    <div class="card card-profile-interest">
+        <div class="card-header pd-y-15 pd-x-20 d-flex align-items-center justify-content-between">
+            <h6 class="tx-uppercase tx-semibold mg-b-0">
+                Datos de Convenio
+            </h6>
+        </div>
+        <!-- card-header -->
+        <div class="card-body pd-25">
+            <div class="row">
+                <div class="col-sm-12 col-lg-12 col-xl-12">
+                    <form enctype="multipart/form-data" id="editarconvenio_mx">
+                        <div class="alert alert-solid d-none" id="response" role="alert">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="inputEmail4">
+                                    Isologo
+                                </label>
+                                <br/>
+                                <img class="img-thumbnail rounded " id="temp_isologo" src="%isologo%">
+                                </img>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="custom-file">
+                                <input autofocus="" class="custom-file-input" id="isologo" name="isologo" onchange="loadFile(event)" type="file">
+                                    <label class="custom-file-label" for="isologo">
+                                        Subir imagen
+                                    </label>
+                                </input>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputAddress2">
+                                Dirección
+                            </label>
+                            <input class="form-control" id="dir" name="dir" type="text" value="%dir%">
+                            </input>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputAddress2">
+                                Telefonos:
+                            </label>
+                            <input class="form-control" id="tel" name="tel" type="text" value="%tel%">
+                            </input>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputAddress2">
+                                Correo electrónco:
+                            </label>
+                            <input class="form-control" id="email" name="email" type="email" value="%email%">
+                            </input>
+                        </div>
+                        <button class="btn btn-primary" id="btn-editar">
+                            Editar Convenio
+                        </button>
+                    </form>
+                </div>
+                <!-- col -->
+            </div>
+            <!-- row -->
+        </div>
+        <!-- card-body -->
+    </div>
+</template>
+<template id="v-eliminar-usuario">
+    <div class="card card-profile-interest">
+        <div class="card-header pd-y-15 pd-x-20 d-flex align-items-center justify-content-between">
+            <h6 class="tx-uppercase tx-semibold mg-b-0">
+                Eliminar Usuario
+            </h6>
+        </div>
+        <!-- card-header -->
+        <div class="card-body pd-25">
+            <div class="row">
+                <div class="col-sm-12 col-lg-12 col-xl-12">
+                    <form id="eliminarusuario_mx">
+                        <div class="alert alert-danger alert-outline" id="response" role="alert">
+                            <h4 class="alert-heading">
+                                Eliminar usuario!
+                            </h4>
+                            <p>
+                                ¿Esta seguro de eliminar este usuario?.
+                            </p>
+                            <hr>
+                                <p class="mb-0">
+                                    Una vez realizado estos cambios no se podran revertir.
+                                </p>
+                            </hr>
+                        </div>
+                        <div class="d-flex flex-row-reverse">
+                            <button class="btn btn-danger " id="btn-eliminar">
+                                Eliminar Usuario
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <!-- col -->
+            </div>
+            <!-- row -->
+        </div>
+        <!-- card-body -->
+    </div>
+</template>
+<br/>

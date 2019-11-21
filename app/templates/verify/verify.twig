@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <!-- Required meta tags -->
+        <base href="{{config.build.url}}"/>
+        <meta charset="utf-8"/>
+        <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+        <!-- Meta -->
+        <meta content="{{config.build.name}}" name="description"/>
+        <meta content="@martinxapps" name="author"/>
+        <!-- Favicon -->
+        <link href="assets/dashforge/assets/img/favicon.png" rel="shortcut icon" type="image/x-icon"/>
+        <title>
+            Activar Cuenta | {{config.build.name}}
+        </title>
+        <!-- vendor css -->
+        <link href="assets/dashforge/lib/%40fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet"/>
+        <link href="assets/dashforge/lib/ionicons/css/ionicons.min.css" rel="stylesheet"/>
+        <!-- DashForge CSS -->
+        <link href="assets/dashforge/assets/css/dashforge.css" rel="stylesheet"/>
+        <link href="assets/dashforge/assets/css/dashforge.auth.css" rel="stylesheet"/>
+    </head>
+    <body>
+        <header class="navbar navbar-header navbar-header-fixed">
+            <a class="burger-menu" href="#" id="mainMenuOpen">
+                <i data-feather="menu">
+                </i>
+            </a>
+            <div class="navbar-brand">
+                <a class="df-logo" href="{{config.build.url}}">
+                    Metrolab |
+                    <span style="margin-left: 0.4rem">
+                        Convenios
+                    </span>
+                </a>
+            </div>
+            <!-- navbar-brand -->
+            <div class="navbar-menu-wrapper" id="navbarMenu">
+                <div class="navbar-menu-header">
+                    <a class="df-logo" href="{{config.build.url}}">
+                        Metrolab |
+                        <span style="margin-left: 0.4rem">
+                            Convenios
+                        </span>
+                    </a>
+                    <a href="#" id="mainMenuClose">
+                        <i data-feather="x">
+                        </i>
+                    </a>
+                </div>
+                <!-- navbar-menu-header -->
+                <ul class="nav navbar-menu">
+                    <li class="nav-label pd-l-20 pd-lg-l-25 d-lg-none">
+                        Menu
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="http://www.metrolab.ec/beta/">
+                            <i data-feather="pie-chart">
+                            </i>
+                            Inicio
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="http://www.metrolab.ec/beta/nosotros/">
+                            <i data-feather="box">
+                            </i>
+                            Nosotros
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="http://www.metrolab.ec/beta/servicios/">
+                            <i data-feather="archive">
+                            </i>
+                            Servicios
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="http://www.metrolab.ec/beta/contacto/">
+                            <i data-feather="archive">
+                            </i>
+                            Contacto
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- navbar-menu-wrapper -->
+        </header>
+        <!-- navbar -->
+        <div class="content content-fixed content-auth-alt">
+            <div class="container ht-100p">
+                <div class="ht-100p d-flex flex-column align-items-center justify-content-center">
+                    <div class="wd-150 wd-sm-250 mg-b-30">
+                        <img alt="" class="img-fluid" src="assets/dashforge/assets/img/img17.png"/>
+                    </div>
+                    <h4 class="tx-20 tx-sm-24">
+                        Verifique su dirección de correo electrónico
+                    </h4>
+                    <p class="tx-color-03 mg-b-40">
+                        Verifique su correo electrónico y haga clic en el botón o enlace para verificar su cuenta.
+                    </p>
+                    <form id="send_mx">
+                        <div class="tx-13 tx-lg-14 mg-b-40">
+                            <div class="alert alert-solid d-none" id="response" role="alert">
+                            </div>
+                            <button class="btn btn-brand-02 d-inline-flex align-items-center" data-token="{{get.token}}" id="send">
+                                Reenviar Verificación
+                            </button>
+                            <a class="btn btn-white d-inline-flex align-items-center mg-l-5" href="#">
+                                Contactar Soporte
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- container -->
+        </div>
+        <!-- content -->
+        {% include 'overall/footer' %}
+        <script src="assets/dashforge/lib/jquery/jquery.min.js">
+        </script>
+        <script src="assets/dashforge/lib/bootstrap/js/bootstrap.bundle.min.js">
+        </script>
+        <script src="assets/dashforge/lib/feather-icons/feather.min.js">
+        </script>
+        <script src="assets/dashforge/lib/perfect-scrollbar/perfect-scrollbar.min.js">
+        </script>
+        <script src="assets/dashforge/assets/js/dashforge.js">
+        </script>
+        <script src="assets/dashforge/app/js/verify.js">
+        </script>
+    </body>
+</html>

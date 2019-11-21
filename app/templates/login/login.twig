@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <!-- Required meta tags -->
+        <base href="{{config.build.url}}"/>
+        <meta charset="utf-8"/>
+        <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+        <!-- Meta -->
+        <meta content="{{config.build.name}}" name="description"/>
+        <meta content="@martinxapps" name="author"/>
+        <!-- Favicon -->
+        <link href="assets/dashforge/assets/img/favicon.png" rel="shortcut icon" type="image/x-icon"/>
+        <title>
+            Entrar | {{config.build.name}}
+        </title>
+        <!-- vendor css -->
+        <link href="assets/dashforge/lib/%40fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet"/>
+        <link href="assets/dashforge/lib/ionicons/css/ionicons.min.css" rel="stylesheet"/>
+        <!-- DashForge CSS -->
+        <link href="assets/dashforge/assets/css/dashforge.css" rel="stylesheet"/>
+        <link href="assets/dashforge/assets/css/dashforge.auth.css" rel="stylesheet"/>
+    </head>
+    <body>
+        <header class="navbar navbar-header navbar-header-fixed">
+            <a class="burger-menu" href="#" id="mainMenuOpen">
+                <i data-feather="menu">
+                </i>
+            </a>
+            <div class="navbar-brand">
+                <a class="df-logo" href="{{config.build.url}}">
+                    Metrolab |
+                    <span style="margin-left: 0.4rem">
+                        Convenios
+                    </span>
+                </a>
+            </div>
+            <!-- navbar-brand -->
+            <div class="navbar-menu-wrapper" id="navbarMenu">
+                <div class="navbar-menu-header">
+                    <a class="df-logo" href="{{config.build.url}}">
+                        Metrolab |
+                        <span style="margin-left: 0.4rem">
+                            Convenios
+                        </span>
+                    </a>
+                    <a href="#" id="mainMenuClose">
+                        <i data-feather="x">
+                        </i>
+                    </a>
+                </div>
+                <!-- navbar-menu-header -->
+                <ul class="nav navbar-menu">
+                    <li class="nav-label pd-l-20 pd-lg-l-25 d-lg-none">
+                        Menu
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="http://www.metrolab.ec/beta/">
+                            <i data-feather="pie-chart">
+                            </i>
+                            Inicio
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="http://www.metrolab.ec/beta/nosotros/">
+                            <i data-feather="box">
+                            </i>
+                            Nosotros
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="http://www.metrolab.ec/beta/servicios/">
+                            <i data-feather="archive">
+                            </i>
+                            Servicios
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="http://www.metrolab.ec/beta/contacto/">
+                            <i data-feather="archive">
+                            </i>
+                            Contacto
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- navbar-menu-wrapper -->
+        </header>
+        <!-- navbar -->
+        <div class="content content-fixed content-auth">
+            <div class="container">
+                <div class="media align-items-stretch justify-content-center ht-100p pos-relative">
+                    <div class="media-body align-items-center d-none d-lg-flex">
+                        <div class="mx-wd-600">
+                            <img alt="" class="img-fluid" src="assets/dashforge/assets/img/img15.png">
+                            </img>
+                        </div>
+                    </div>
+                    <!-- media-body -->
+                    <div class="sign-wrapper mg-lg-l-50 mg-xl-l-60">
+                        <div class="wd-100p">
+                            <h3 class="tx-color-01 mg-b-5">
+                                Entrar
+                            </h3>
+                            <p class="tx-color-03 tx-12 mg-b-10">
+                                Bienvenido! Por favor inicie sesión para continuar.
+                            </p>
+                            <form id="login_mx">
+                                {% if (get.resetpass==1) %}
+                                <div class="alert alert-solid alert-success justify-content-start" id="response" role="alert">
+                                    <b>
+                                        Proceso de recuperacion de contraseña exitoso. Inicie sesion con la contraseña temporal que hemos enviado a su correo. Por seguridad actualize en su perfil una nueva contraseña.
+                                    </b>
+                                </div>
+                                {% elseif (get.actived==1) %}
+                                <div class="alert alert-solid alert-success justify-content-start" id="response" role="alert">
+                                    <b>
+                                        Su cuenta fue activada con éxito. Bienvenido!
+                                    </b>
+                                </div>
+                                {% else %}
+                                <div class="alert alert-solid d-none" id="response" role="alert">
+                                </div>
+                                {% endif %}
+                                <div class="form-group">
+                                    <label>
+                                        Usuario o Correo Electrónico
+                                    </label>
+                                    <input autofocus="true" class="form-control" name="user" placeholder="Usuario o Correo Electrónico" type="text">
+                                    </input>
+                                </div>
+                                <div class="form-group">
+                                    <div class="d-flex justify-content-between mg-b-5">
+                                        <label class="mg-b-0-f">
+                                            Contraseña
+                                        </label>
+                                    </div>
+                                    <input class="form-control" name="pass" placeholder="Enter your password" type="password">
+                                    </input>
+                                </div>
+                                <button class="btn btn-brand-02 btn-block" id="login">
+                                    Entrar
+                                </button>
+                            </form>
+                            <div class="tx-13 mg-t-20 tx-center">
+                                ¿No tienes una cuenta?
+                                <a href="{{config.build.url}}registro">
+                                    Crea una cuenta
+                                </a>
+                            </div>
+                            <div class="tx-13 tx-center">
+                                <a class="tx-13" href="{{config.build.url}}recuperar-contraseña">
+                                    ¿Recuperar contraseña?
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- sign-wrapper -->
+                </div>
+                <!-- media -->
+            </div>
+            <!-- container -->
+        </div>
+        <!-- content -->
+        {% include 'overall/footer' %}
+        <script src="assets/dashforge/lib/jquery/jquery.min.js">
+        </script>
+        <script src="assets/dashforge/lib/bootstrap/js/bootstrap.bundle.min.js">
+        </script>
+        <script src="assets/dashforge/lib/feather-icons/feather.min.js">
+        </script>
+        <script src="assets/dashforge/lib/perfect-scrollbar/perfect-scrollbar.min.js">
+        </script>
+        <script src="assets/dashforge/assets/js/dashforge.js">
+        </script>
+        <script src="assets/dashforge/app/js/login.js">
+        </script>
+    </body>
+</html>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:s0="http://tempuri.org" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" targetNamespace="http://tempuri.org">
+    <types>
+        <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org">
+            <s:element name="Preview">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element minOccurs="0" name="pstrSessionKey" type="s:string"/>
+                        <s:element minOccurs="0" name="pstrSampleID" type="s:string"/>
+                        <s:element minOccurs="0" name="pstrRegisterDate" type="s:string"/>
+                        <s:element minOccurs="0" name="pstrFormatDescription" type="s:string"/>
+                        <s:element minOccurs="0" name="pstrPrintTarget" type="s:string"/>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="PreviewResponse">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element name="PreviewResult" type="s:string"/>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+        </s:schema>
+    </types>
+    <message name="PreviewSoapIn">
+        <part name="parameters" element="s0:Preview"/>
+    </message>
+    <message name="PreviewSoapOut">
+        <part name="parameters" element="s0:PreviewResponse"/>
+    </message>
+    <portType name="wReportsSoap">
+        <operation name="Preview">
+            <input message="s0:PreviewSoapIn"/>
+            <output message="s0:PreviewSoapOut"/>
+        </operation>
+    </portType>
+    <binding name="wReportsSoap" type="s0:wReportsSoap">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <operation name="Preview">
+            <soap:operation soapAction="http://tempuri.org/wso.ws.wReports.Preview" style="document"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+    </binding>
+    <service name="wReports">
+        <port name="wReportsSoap" binding="s0:wReportsSoap">
+            <soap:address location="http://172.16.2.221/csp/acb/wso.ws.wReports.cls"/>
+        </port>
+    </service>
+</definitions>

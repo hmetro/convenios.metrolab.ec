@@ -1,0 +1,92 @@
+# This file is part of the Ocrend Framewok 3 package.
+#
+# (c) Ocrend Software <info@ocrend.com>
+#
+# For the full copyright and license information, please view the LICENS
+# file that was distributed with this source code.
+
+# Configuración de la base de datos
+database:
+  default_driver: mysql
+  drivers:
+    mysql: 
+      host: localhost
+      user: admin_convenios
+      pass: 1501128480
+      name: admin_convenios
+      port: default
+      socket: default
+    oracle: 
+      dbname: conclina
+      user: mchang
+      password : 1501508480
+      port: 1521
+      host: 172.16.3.247
+      servicename: conclina
+      service: true
+      driver: oci8
+      charset: UTF8
+    oracle_metrored: 
+      dbname: metroamb
+      user: mchang
+      password: mchang5080
+      port: 1521
+      host: 172.16.3.247
+      servicename: metroamb
+      service: true
+      driver: oci8
+      charset: UTF8
+    oracle_pruebas: 
+      dbname: desa
+      user: gema
+      password : gemad15
+      port: 1521
+      host: 172.16.9.77
+      driver: oci8
+      charset: UTF8
+    sqlite3:
+      file: '___ROOT___Ocrend/Kernel/Database/Drivers/Sqlite/db.sqlite3'
+      
+# Configuración de servidor SMTP
+mailer:
+  host: smtp.trx.icommarketing.com
+  user: 6f347f1d-faa5-4989-aee4-a955c677dc6b
+  pass: 6f347f1d-faa5-4989-aee4-a955c677dc6b
+  from: convenios@metrolab.ec
+  port: 587
+  logo: 
+
+# Configuración de twig
+twig:
+  cache: false
+  compiled_dir:  false # ./app/templates/.compiled/
+  charset: UTF-8
+  strict_variables: false
+  autoescape: html
+  
+# Configuración del sitio
+build:
+  production: false
+  name: Metrolab - Convenios Beta v1.0
+  url: //convenios.metrolab.ec/
+  timezone: America/Guayaquil
+  version: 3.0.1
+  copyright: Metrolab | Convenios - Todos los derechos reservados
+
+# Configuración de cookies
+sessions:
+  lifetime: 15600
+  user_cookie:
+    enable: true
+    key_encrypt: https://www.metrolab.ec
+    lifetime: 15600
+
+# Configuración de la api
+api:
+  active: true
+  origin: '*'
+
+# Configuración de ruta
+router:
+  ssl: true
+  path: convenios.metrolab.ec/

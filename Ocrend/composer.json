@@ -1,0 +1,19 @@
+{
+    "require": {
+        "twig/twig": "^2.0",
+        "symfony/yaml": "^3.3",
+        "symfony/http-foundation": "^3.3",
+        "silex/silex": "~2.0",
+        "symfony/debug": "^3.3",
+        "symfony/var-dumper": "^3.3",
+        "swiftmailer/swiftmailer": "^6.0",
+        "symfony/console": "^3.3",
+        "spatie/menu": "^2.8",
+        "doctrine/dbal": "^2.5",
+        "ifedko/php-doctrine-dbal-pagination": "^2.1",
+        "catfan/medoo": "^1.7",
+        "fpdf/fpdf": "^1.81",
+        "setasign/fpdi": "^2.2",
+        "setasign/fpdi-fpdf": "^2.2"
+    }
+}
